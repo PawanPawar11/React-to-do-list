@@ -20,7 +20,7 @@ function page() {
         setmainTask(copyTask)
     }
 
-    let renderTask = <h2>No Task Available</h2>
+    let renderTask = <h2 className='text-[1.1rem]'>No Task Available</h2>
 
     if(mainTask.length>0) {
         renderTask = mainTask.map((t, i) => {
@@ -28,9 +28,9 @@ function page() {
         <li key={i} className='flex items-center justify-between mb-5'>
             <div className='flex justify-between items-center gap-10 w-2/3'>
                 <h5 className='text-2xl font-semibold'>{t.title}</h5>
-                <h6 className='text-2xl font-medium text-white'>{t.desc}</h6>
+                <h6 className='text-2xl font-medium'>{t.desc}</h6>
             </div>
-            <button onClick={()=>{deleteHandler(i)}} className='bg-zinc-500 px-4 py-2 text-white'>Delete</button>
+            <button onClick={()=>{deleteHandler(i)}} className='bg-red-500 px-4 py-2 text-[1.3rem] font-semibold rounded-md text-white'>Delete</button>
         </li>
         );
     });
@@ -38,7 +38,7 @@ function page() {
 
     return (
     <>
-        <h1 className='bg-black text-white p-5 text-5xl font-bold text-center'>My Todo List</h1>
+        <h1 className='bg-black text-white p-5 text-5xl font-bold text-center'>My To-do List</h1>
         <form onSubmit={submitHandler}>
             <input 
             type="text" 
